@@ -5,9 +5,12 @@ Framework MVC app that runs in a Docker container.
 
 Get started
 -----------
-1. Clone this repo and from the root folder execute the following
-commands from the shell to get the app running in a Docker container.
+1. Clone this repo.
+1. From the root folder execute the following commands from the shell to get the app running in a Docker container.
    ```bash
+   # build solution
+   msbuild -p:DeployOnBuild=true -p:PublishProfile=DebugFolderProfile
+
    # build image
    docker build -t asp-net-app:latest .
 
@@ -51,4 +54,21 @@ docker start -ai aspnet-container
 
 Using volumes
 -------------
+As an alternative of copying local files into the container
+we can use volumes to be able, for example, to make changes to files
+and see them reflected live into the running container website.
 
+1. Run the following commands on a shell.
+   ```bash
+   # build solution
+   msbuild -p:DeployOnBuild=true -p:PublishProfile=DebugFolderProfile
+
+   # build image for volumes
+   docker build -f dockerfile.volume -t asp-net-app:volume .
+
+   # create and run container
+   docker run -v c:/you_local_path/asp-net-app/bin/Debug/Publish:c:/inetpub/wwwroot --name aspnet-volume-container -p 8080:80 -it asp-net-app:volume
+   ```
+1. Follow steps from 3 onwards as described in [Get started](#getstarted).
+1. Make a change in any file (re-run `msbuild` if necessary).
+1. Refresh the page in the browser and see that the changes are applied.

@@ -70,5 +70,5 @@ and see them reflected live into the running container website.
    docker run -v c:/you_local_path/asp-net-app/bin/Debug/Publish:c:/inetpub/wwwroot --name aspnet-volume-container -p 8080:80 -it asp-net-app:volume
    ```
 1. Follow steps from 3 onwards as described in [Get started](#getstarted).
-1. Make a change in any file (re-run `msbuild` if necessary).
+1. Make a change in any file and re-publish.
 1. Refresh the page in the browser and see that the changes are applied.

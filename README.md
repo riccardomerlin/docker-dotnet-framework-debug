@@ -25,7 +25,7 @@ see the page shown below.
 1. Now, open up `/asp-net-app.sln` in Visual Studio 2017.
 1. From the top menu select `Debug > Attach to process...`.
 1. On the "attach ro process" window > Connection target > click on `Find`.
-1. If the debugger is running (see step 1) yuo should get a result.
+1. If the debugger is running (see step 1) you should get a result.
 1. Select the remote debugger found.
 1. Tick `Show processes for all users`.
 1. select `w3wp.exe` and click `Attach`.
@@ -48,3 +48,7 @@ docker create --name aspnet-container -p 8080:80 -it asp-net-app:latest
 # start container
 docker start -ai aspnet-container
 ```
+
+Using volumes
+-------------
+

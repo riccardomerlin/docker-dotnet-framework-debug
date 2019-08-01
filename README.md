@@ -27,14 +27,14 @@ Get started
 see the page shown below.
 1. Now, open up `/asp-net-app.sln` in Visual Studio 2017.
 1. From the top menu select `Debug > Attach to process...`.
-1. On the "attach ro process" window > Connection target > click on `Find`.
+1. On the `Attach to process` window select `Connection target` and click `Find`.
 1. If the debugger is running (see step 1) you should get a result.
 1. Select the remote debugger found.
 1. Tick `Show processes for all users`.
-1. select `w3wp.exe` and click `Attach`.
+1. Select `w3wp.exe` and click `Attach`.
 1. Set a breakpoint on `HomeController.cs > About()` action.
 1. Go back to the browser page and click the `About` page link.
-1. Visual Studio debugger should stop on the breakpoint set.
+1. Visual Studio debugger should stop on the breakpoint.
 
 Other actions
 -------------
